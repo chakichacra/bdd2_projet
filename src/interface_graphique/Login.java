@@ -16,7 +16,7 @@ public class Login {
 	private JPanel formulaire;
 	
 	public Login() {
-		//set up du panel principal
+		//set up du panel principal test
 		this.pan = new JPanel();
 		this.pan.setBackground(Color.darkGray);
 		this.pan.setLayout(new BorderLayout());
