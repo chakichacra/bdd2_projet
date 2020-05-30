@@ -33,13 +33,17 @@ public class AdminMenu extends JPanel {
 		btnNewButton.setBounds(10, 208, 180, 23);
 		add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("g\u00E9rer un patient");
+		JButton btnNewButton_1 = new JButton("cr\u00E9er un rendez-vous");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
 		btnNewButton_1.setBounds(10, 242, 180, 23);
 		add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("g\u00E9rer un patient");
+		btnNewButton_2.setBounds(10, 276, 180, 23);
+		add(btnNewButton_2);
 
 	}
 
