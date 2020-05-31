@@ -22,6 +22,22 @@ public class Date {
 		this.seconde = Integer.parseInt(splitHour[2]);
 	}
 	
+	public Integer getYear() {
+		return year;
+	}
+
+	public void setYear(Integer year) {
+		this.year = year;
+	}
+
+	public Integer getSeconde() {
+		return seconde;
+	}
+
+	public void setSeconde(Integer seconde) {
+		this.seconde = seconde;
+	}
+
 	public String getString() {
 		String ret;
 		ret = this.jour.toString() + "/" + this.mois.toString() +
