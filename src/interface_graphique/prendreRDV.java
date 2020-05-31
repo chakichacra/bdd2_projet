@@ -15,9 +15,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JSpinner;
 import javax.swing.JTable;
 import java.util.Date; 
-import net.sourceforge.jdatepicker.impl.JDatePanelImpl;
-import net.sourceforge.jdatepicker.impl.JDatePickerImpl;
-import net.sourceforge.jdatepicker.impl.UtilDateModel;
+
 
 public class prendreRDV extends JPanel {
 	private JTextField txtPrendreUnRendezVous;
