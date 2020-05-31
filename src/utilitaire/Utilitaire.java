@@ -17,7 +17,7 @@ public class Utilitaire {
 	    }
 
 	    try {
-	        connexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/gdc?" + 
+	        connexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/projetbdd?" + 
 	        		"serverTimezone=UTC", "root", "efrei123");
 	    } 
 		catch (SQLException e) {

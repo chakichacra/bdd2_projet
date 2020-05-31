@@ -18,6 +18,8 @@ public class PatientMenu extends JPanel {
 		setPreferredSize(new Dimension(200, 500));
 		setLayout(null);
 		
+		add(new entete());
+		
 		txtMenuPatient = new JTextField();
 		txtMenuPatient.setHorizontalAlignment(SwingConstants.CENTER);
 		txtMenuPatient.setText("MENU PATIENT");

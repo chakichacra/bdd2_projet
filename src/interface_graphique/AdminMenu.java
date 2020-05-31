@@ -41,7 +41,11 @@ public class AdminMenu extends JPanel {
 		btnNewButton_1.setBounds(10, 242, 180, 23);
 		add(btnNewButton_1);
 		
-		JButton btnNewButton_2 = new JButton("g\u00E9rer un patient");
+		JButton btnNewButton_2 = new JButton("ajouter un patient");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		btnNewButton_2.setBounds(10, 276, 180, 23);
 		add(btnNewButton_2);
 
