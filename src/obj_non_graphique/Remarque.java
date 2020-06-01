@@ -29,7 +29,7 @@ public class Remarque {
 		}
 	}
 	
-	public void creerRemarque(String id_rdv) {
+	public void creerRemarque() {
 		try {
 			Connection database = Utilitaire.loadDatabase();
 			Statement statement = database.createStatement();
@@ -37,6 +37,9 @@ public class Remarque {
 			result.next();
 			String typeId = result.getString("Id_TypeRemarque");
 			statement.executeUpdate(String.format("INSERT INTO remarques(description,Id_TypeRemarque) VALUES('%s',%s)", this.text, typeId));
+			result = statement.executeQuery("SELECT MAX(id_remarques) from remarques;");
+			result.next();
+			this.id = Integer.parseInt(result.getString("id_remarques"));
 			
 		}catch(SQLException e) {
 			System.out.println(e.getMessage());
