@@ -21,6 +21,16 @@ public class Date {
 		this.minute = Integer.parseInt(splitHour[1]);
 		this.seconde = Integer.parseInt(splitHour[2]);
 	}
+	public Date() {
+		this.jour = null;
+	}
+	
+	public String toSQLFormat() {
+		String ret;
+		ret = this.year.toString() + "-" + this.mois.toString() + "-" + this.jour + " "
+				+ this.heure.toString()+ ":" + this.minute.toString() + ":" + this.seconde.toString();
+		return ret;
+	}
 	
 	public Integer getYear() {
 		return year;

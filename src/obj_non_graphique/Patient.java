@@ -12,11 +12,13 @@ public class Patient {
 	private String prenom;
 	private String nom;
 	private String adresse;
-	private String dateDeNaissance;
+	private Date dateDeNaissance;
 	private String numeroDeTelephone;
 	private String sexe;
 	private String identifiant;
 	private String password;
+	
+	private Travail travail;
 	
 	private String moyenDeDecouverte;
 	private Date datePremiereConsultation;
@@ -27,18 +29,24 @@ public class Patient {
 			Connection database = Utilitaire.loadDatabase();
 			Statement statement = database.createStatement();
 			ResultSet result = statement
-					.executeQuery(String.format("SELECT * from patient where id=%s;", id.toString()));
+					.executeQuery(String.format("SELECT * from patient where Id_patient=%s;", id.toString()));
 
 			result.next();
 			this.prenom = result.getString("Prenom");
 			this.nom = result.getString("Nom");
 			this.adresse = result.getString("adresse");
-			this.dateDeNaissance = result.getString("date_naissance");
+			this.dateDeNaissance = new Date(result.getString("date_naissance"));
 			this.numeroDeTelephone = result.getString("tel");
 			this.sexe = result.getString("sexe");
 			this.identifiant = result.getString("login");
 			this.moyenDeDecouverte = result.getString("moyenDecouverte");
 			this.datePremiereConsultation = new Date(result.getString("PremiereConsultation"));
+			this.travail = new Travail();
+			
+			/*result = statement.executeQuery(String.format("SELECT * FROM avoir where Id_patient=%s;", id.toString()));
+			result.next();
+			this.travail.setDateDebut(new Date(result.getString("date_debut")));
+			this.travail.setDateFin(new Date(result.getString("date_fin")));*/
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
@@ -49,19 +57,19 @@ public class Patient {
 			Connection database = Utilitaire.loadDatabase();
 			Statement statement = database.createStatement();
 			statement.executeUpdate("INSERT INTO patient(Prenom,Nom,adresse,date_naissance,tel,sexe,login,mdp,moyenDecouverte,PremiereConsultation) " +
-					String.format("VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);", 
+					String.format("VALUES('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s');", 
 							this.prenom,
 							this.nom,
 							this.adresse,
-							this.dateDeNaissance,
+							this.dateDeNaissance.toSQLFormat(),
 							this.numeroDeTelephone,
 							this.sexe,
 							this.identifiant,
 							this.password,
 							this.moyenDeDecouverte,
-							this.datePremiereConsultation.getString()));
+							this.datePremiereConsultation.toSQLFormat()));
 		} catch(SQLException e) {
-			
+			System.out.println(e.getMessage());
 		}
 	}
 	
@@ -110,11 +118,11 @@ public class Patient {
 		this.adresse = adresse;
 	}
 
-	public String getDateDeNaissance() {
+	public Date getDateDeNaissance() {
 		return dateDeNaissance;
 	}
 
-	public void setDateDeNaissance(String dateDeNaissance) {
+	public void setDateDeNaissance(Date dateDeNaissance) {
 		this.dateDeNaissance = dateDeNaissance;
 	}
 
@@ -157,5 +165,4 @@ public class Patient {
 	public void setDatePremiereConsultation(Date datePremiereConsultation) {
 		this.datePremiereConsultation = datePremiereConsultation;
 	}
-
 }

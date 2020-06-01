@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import utilitaire.Utilitaire;
 
@@ -11,9 +12,11 @@ public class RendezVous {
 	private Integer id;
 	private Date date;
 	private Float prix;
+	private String moyenDePaiment;
+	private ArrayList<Remarque> remarques;
 	
 	
-	public RendezVous(String id) {
+	public void initWithId(String id) {
 		this.id = Integer.parseInt(id);
 		try {
 			Connection database = Utilitaire.loadDatabase();
@@ -27,11 +30,11 @@ public class RendezVous {
 		}
 	}
 	
-	
 	public void creerRDV() {
 		try {
 		Connection database = Utilitaire.loadDatabase();
 		Statement statement = database.createStatement();
+		statement.executeUpdate(String.format("INSERT INTO rendez_vous(date_rdv, prix) VALUES(%s,%s);", this.date, this.prix.toString()));
 		statement.executeUpdate(String.format("INSERT INTO rendez_vous(date_rdv, prix) VALUES(%s,%s);", this.date, this.prix.toString()));
 		} catch(SQLException e) {
 			System.out.println(e.getMessage());
@@ -53,6 +56,25 @@ public class RendezVous {
 			}
 		
 	}
+	
+	public Integer getId() {
+		return id;
+	}
+
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+
+	public void setPrix(Float prix) {
+		this.prix = prix;
+	}
+
+
+	public RendezVous() {
+		this.date = null;
+	}
 
 	public Date getDate() {
 		return date;
@@ -72,7 +94,6 @@ public class RendezVous {
 	public void setPrix(float prix) {
 		this.prix = prix;
 	}
-	
 	
 
 }
