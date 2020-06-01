@@ -19,6 +19,8 @@ import com.toedter.calendar.JDateChooser;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import javax.swing.DefaultComboBoxModel;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class ajouterRDV {
 
@@ -95,9 +97,9 @@ public class ajouterRDV {
 		menu.add(panel_4);
 		panel_4.setLayout(null);
 		
-		JButton btnNewButton = new JButton("ajouter un patient");
-		btnNewButton.setBounds(10, 230, 230, 23);
-		menu.add(btnNewButton);
+		JButton btnAjouterPatient = new JButton("ajouter un patient");
+		btnAjouterPatient.setBounds(10, 230, 230, 23);
+		menu.add(btnAjouterPatient);
 		
 		JButton btnAjouterUnRendezvous = new JButton("ajouter un rendez-vous");
 		btnAjouterUnRendezvous.setBounds(10, 264, 230, 23);
@@ -218,5 +220,45 @@ public class ajouterRDV {
 		classification3.setModel(new DefaultComboBoxModel(new String[] {"enfant", "adolescent", "adulte", "couple"}));
 		classification3.setBounds(442, 239, 77, 22);
 		panel_centre.add(classification3);
+		
+		btnAjouterPatient.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		btnAjouterUnRendezvous.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		btnConsulterMesRendezvous.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		JButton ajouterRDV = new JButton("ajouter");
+		ajouterRDV.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		btnConsulterLesRendezvous.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		deconnexion.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		ajouterRDV.setBounds(244, 464, 89, 23);
+		panel_centre.add(ajouterRDV);
 	}
 }

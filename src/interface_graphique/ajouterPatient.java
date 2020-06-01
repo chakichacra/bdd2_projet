@@ -5,6 +5,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -106,9 +108,9 @@ public class ajouterPatient {
 		menu.add(panel_4);
 		panel_4.setLayout(null);
 		
-		JButton btnNewButton = new JButton("ajouter un patient");
-		btnNewButton.setBounds(10, 230, 230, 23);
-		menu.add(btnNewButton);
+		JButton btnAjouterPatient = new JButton("ajouter un patient");
+		btnAjouterPatient.setBounds(10, 230, 230, 23);
+		menu.add(btnAjouterPatient);
 		
 		JButton btnAjouterUnRendezvous = new JButton("ajouter un rendez-vous");
 		btnAjouterUnRendezvous.setBounds(10, 264, 230, 23);
@@ -267,6 +269,47 @@ public class ajouterPatient {
         ButtonGroup group = new ButtonGroup();
         group.add(homme);
         group.add(femme);
+        
+        JButton ajouterPatient = new JButton("ajouter");
+        ajouterPatient.setBounds(232, 608, 89, 23);
+        panel_centre.add(ajouterPatient);
+        
+        btnAjouterPatient.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		btnAjouterUnRendezvous.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		btnConsulterMesRendezvous.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		btnConsulterLesRendezvous.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		deconnexion.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		
+        ajouterPatient.addMouseListener(new MouseAdapter() {
+        	@Override
+        	public void mouseClicked(MouseEvent e) {
+        	}
+        });
 		
 		
 	}

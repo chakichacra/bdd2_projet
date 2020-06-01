@@ -5,6 +5,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -89,9 +91,9 @@ public class consultationChoixPatient {
 		menu.add(panel_4);
 		panel_4.setLayout(null);
 		
-		JButton btnNewButton = new JButton("ajouter un patient");
-		btnNewButton.setBounds(10, 230, 230, 23);
-		menu.add(btnNewButton);
+		JButton btnAjouterPatient = new JButton("ajouter un patient");
+		btnAjouterPatient.setBounds(10, 230, 230, 23);
+		menu.add(btnAjouterPatient);
 		
 		JButton btnAjouterUnRendezvous = new JButton("ajouter un rendez-vous");
 		btnAjouterUnRendezvous.setBounds(10, 264, 230, 23);
@@ -137,10 +139,52 @@ public class consultationChoixPatient {
 		lblNewLabel_3.setBounds(22, 170, 200, 23);
 		panel_centre.add(lblNewLabel_3);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"patient1", "patient2", "patient3"}));
-		comboBox.setBounds(232, 171, 200, 22);
-		panel_centre.add(comboBox);
+		JComboBox BoxChoixPatient = new JComboBox();
+		BoxChoixPatient.setModel(new DefaultComboBoxModel(new String[] {"patient1", "patient2", "patient3"}));
+		BoxChoixPatient.setBounds(232, 171, 200, 22);
+		panel_centre.add(BoxChoixPatient);
+		
+		JButton btnValiderPatient = new JButton("valider");
+		btnValiderPatient.setBounds(442, 171, 89, 23);
+		panel_centre.add(btnValiderPatient);
+		
+		
+		btnAjouterPatient.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		btnAjouterUnRendezvous.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		btnConsulterMesRendezvous.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		btnConsulterLesRendezvous.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		deconnexion.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		btnValiderPatient.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
 	}
 
 }

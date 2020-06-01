@@ -162,5 +162,23 @@ public class interface_patient {
 		lblNewLabel_4.setBounds(155, 21, 500, 50);
 		panel_2.add(lblNewLabel_4);
 		
+		fut.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+
+		ant.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		btnNewButton_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
 	}
 }

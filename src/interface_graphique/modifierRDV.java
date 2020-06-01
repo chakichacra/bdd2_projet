@@ -24,6 +24,7 @@ public class modifierRDV {
 
 	private JFrame frame;
 	private JTextField prix;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -95,9 +96,9 @@ public class modifierRDV {
 		menu.add(panel_4);
 		panel_4.setLayout(null);
 		
-		JButton btnNewButton = new JButton("ajouter un patient");
-		btnNewButton.setBounds(10, 230, 230, 23);
-		menu.add(btnNewButton);
+		JButton btnAjouterPatient = new JButton("ajouter un patient");
+		btnAjouterPatient.setBounds(10, 230, 230, 23);
+		menu.add(btnAjouterPatient);
 		
 		JButton btnAjouterUnRendezvous = new JButton("ajouter un rendez-vous");
 		btnAjouterUnRendezvous.setBounds(10, 264, 230, 23);
@@ -219,14 +220,56 @@ public class modifierRDV {
 		classification3.setBounds(442, 239, 77, 22);
 		panel_centre.add(classification3);
 		
-		JButton btnNewButton_1 = new JButton("valider");
-		btnNewButton_1.addMouseListener(new MouseAdapter() {
+		JButton modifierRDV = new JButton("valider");
+		modifierRDV.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 			}
 		});
-		btnNewButton_1.setBounds(62, 433, 89, 23);
-		panel_centre.add(btnNewButton_1);
+		modifierRDV.setBounds(62, 433, 89, 23);
+		panel_centre.add(modifierRDV);
+		
+		textField = new JTextField();
+		textField.setBounds(232, 376, 200, 20);
+		panel_centre.add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblRemarque = new JLabel("remarque");
+		lblRemarque.setHorizontalAlignment(SwingConstants.CENTER);
+		lblRemarque.setFont(new Font("Verdana", Font.BOLD, 12));
+		lblRemarque.setBounds(22, 374, 200, 23);
+		panel_centre.add(lblRemarque);
+		
+		
+		btnAjouterPatient.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		btnAjouterUnRendezvous.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		btnConsulterMesRendezvous.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		btnConsulterLesRendezvous.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		deconnexion.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
 		
 	}
 }

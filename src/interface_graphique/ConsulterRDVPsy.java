@@ -6,6 +6,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -88,9 +90,9 @@ public class ConsulterRDVPsy {
 		menu.add(panel_4);
 		panel_4.setLayout(null);
 		
-		JButton btnNewButton = new JButton("ajouter un patient");
-		btnNewButton.setBounds(10, 230, 230, 23);
-		menu.add(btnNewButton);
+		JButton btnAjouterPatient = new JButton("ajouter un patient");
+		btnAjouterPatient.setBounds(10, 230, 230, 23);
+		menu.add(btnAjouterPatient);
 		
 		JButton btnAjouterUnRendezvous = new JButton("ajouter un rendez-vous");
 		btnAjouterUnRendezvous.setBounds(10, 264, 230, 23);
@@ -130,12 +132,56 @@ public class ConsulterRDVPsy {
 		lblNewLabel_2.setBounds(114, 27, 428, 45);
 		panel_1.add(lblNewLabel_2);
 		
-		JButton btnNewButton_1 = new JButton("consulter mes rendez-vous pour une semaine");
-		btnNewButton_1.setBounds(83, 140, 255, 23);
-		panel_centre.add(btnNewButton_1);
+		JButton btnChoixSemaine = new JButton("consulter mes rendez-vous pour une semaine");
+		btnChoixSemaine.setBounds(83, 140, 255, 23);
+		panel_centre.add(btnChoixSemaine);
 		
-		JButton btnConsulterMesRendezvous_1 = new JButton("consulter mes rendez-vous pour un jour");
-		btnConsulterMesRendezvous_1.setBounds(348, 140, 255, 23);
-		panel_centre.add(btnConsulterMesRendezvous_1);
+		JButton btnChoixJour = new JButton("consulter mes rendez-vous pour un jour");
+		btnChoixJour.setBounds(348, 140, 255, 23);
+		panel_centre.add(btnChoixJour);
+		
+		
+		btnAjouterPatient.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		btnAjouterUnRendezvous.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		btnConsulterMesRendezvous.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		
+		btnConsulterLesRendezvous.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		deconnexion.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		btnChoixSemaine.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		btnChoixJour.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
 	}
 }

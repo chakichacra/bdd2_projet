@@ -9,8 +9,10 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -21,6 +23,8 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class ConsultationRDVAnterieurs {
 
@@ -100,18 +104,10 @@ public class ConsultationRDVAnterieurs {
 		panel_4.setLayout(null);
 		
 		JButton fut = new JButton("rendez-vous futurs");
-		fut.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		;
-		
 		fut.setBounds(10, 225, 180, 23);
 		menu.add(fut);
 		fut.setFont(new Font("Verdana", Font.PLAIN, 11));
 		JButton ant = new JButton("rendez-vous anterieurs");
-		
-		
 		ant.setBounds(10, 259, 180, 23);
 		menu.add(ant);
 		ant.setFont(new Font("Verdana", Font.PLAIN, 11));
@@ -182,7 +178,23 @@ public class ConsultationRDVAnterieurs {
 			scrollPane.setViewportView(table_2);
 			panel_centre.setLayout(gl_panel_centre);
 			
+			fut.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+				}
+			});
 
+			ant.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+				}
+			});
+			
+			btnNewButton_1.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+				}
+			});
 		
 		
 	}

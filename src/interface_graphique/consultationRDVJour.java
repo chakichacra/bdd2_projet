@@ -5,6 +5,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
@@ -94,9 +96,9 @@ public class consultationRDVJour {
 		menu.add(panel_4);
 		panel_4.setLayout(null);
 		
-		JButton btnNewButton = new JButton("ajouter un patient");
-		btnNewButton.setBounds(10, 230, 230, 23);
-		menu.add(btnNewButton);
+		JButton btnAjouterPatient = new JButton("ajouter un patient");
+		btnAjouterPatient.setBounds(10, 230, 230, 23);
+		menu.add(btnAjouterPatient);
 		
 		JButton btnAjouterUnRendezvous = new JButton("ajouter un rendez-vous");
 		btnAjouterUnRendezvous.setBounds(10, 264, 230, 23);
@@ -134,9 +136,9 @@ public class consultationRDVJour {
 		lblNewLabel_2.setBounds(114, 27, 428, 45);
 		panel_1.add(lblNewLabel_2);
 		
-		JButton btnNewButton_1 = new JButton("consulter mes rendez-vous pour une semaine");
+		JButton btnChoixSemaine = new JButton("consulter mes rendez-vous pour une semaine");
 		
-		JButton btnConsulterMesRendezvous_1 = new JButton("consulter mes rendez-vous pour un jour");
+		JButton btnChoixJour = new JButton("consulter mes rendez-vous pour un jour");
 		
 		JScrollPane scrollPane = new JScrollPane();
 		
@@ -151,9 +153,9 @@ public class consultationRDVJour {
 					.addGroup(gl_panel_centre.createParallelGroup(Alignment.LEADING)
 						.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 525, GroupLayout.PREFERRED_SIZE)
 						.addGroup(gl_panel_centre.createSequentialGroup()
-							.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 255, GroupLayout.PREFERRED_SIZE)
+							.addComponent(btnChoixSemaine, GroupLayout.PREFERRED_SIZE, 255, GroupLayout.PREFERRED_SIZE)
 							.addGap(10)
-							.addComponent(btnConsulterMesRendezvous_1, GroupLayout.PREFERRED_SIZE, 255, GroupLayout.PREFERRED_SIZE))
+							.addComponent(btnChoixJour, GroupLayout.PREFERRED_SIZE, 255, GroupLayout.PREFERRED_SIZE))
 						.addComponent(lblNewLabel_3, GroupLayout.PREFERRED_SIZE, 288, GroupLayout.PREFERRED_SIZE))
 					.addGap(126))
 		);
@@ -163,8 +165,8 @@ public class consultationRDVJour {
 					.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE)
 					.addGap(57)
 					.addGroup(gl_panel_centre.createParallelGroup(Alignment.LEADING)
-						.addComponent(btnNewButton_1)
-						.addComponent(btnConsulterMesRendezvous_1))
+						.addComponent(btnChoixSemaine)
+						.addComponent(btnChoixJour))
 					.addPreferredGap(ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
 					.addComponent(lblNewLabel_3)
 					.addGap(18)
@@ -182,6 +184,49 @@ public class consultationRDVJour {
 		));
 		scrollPane.setViewportView(table);
 		panel_centre.setLayout(gl_panel_centre);
+		
+		
+		btnAjouterPatient.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		btnAjouterUnRendezvous.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		btnConsulterMesRendezvous.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		btnConsulterLesRendezvous.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		deconnexion.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		btnChoixSemaine.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		
+		btnChoixJour.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
 	}
 
 }

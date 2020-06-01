@@ -7,6 +7,8 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
@@ -179,5 +181,24 @@ public class consultationRDVFuturs {
 			scrollPane.setColumnHeaderView(table_2);
 			scrollPane.setViewportView(table_2);
 			panel_centre.setLayout(gl_panel_centre);
+			
+			
+			fut.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+				}
+			});
+
+			ant.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+				}
+			});
+			
+			btnNewButton_1.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+				}
+			});
 	}
 }
