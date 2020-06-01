@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.math.BigInteger; 
 import java.security.MessageDigest; 
 import java.security.NoSuchAlgorithmException; 
@@ -66,7 +67,7 @@ public class Utilitaire {
 		try {
 		Connection connexion = Utilitaire.loadDatabase();
 		Statement statement = connexion.createStatement();
-		ResultSet result = statement.executeQuery(String.format("SELECT id FROM patien WHERE login=%s AND mdp=%s;", username, Utilitaire.encryptThisString(password)));
+		ResultSet result = statement.executeQuery(String.format("SELECT Id_patient FROM patient WHERE login=%s AND mdp=%s;", username, Utilitaire.encryptThisString(password)));
 		if (result.next())
 			return true;
 		else
@@ -82,7 +83,7 @@ public class Utilitaire {
 		try {
 			Connection connexion = Utilitaire.loadDatabase();
 			Statement statement = connexion.createStatement();
-			ResultSet result = statement.executeQuery(String.format("SELECT id FROM patien WHERE login=%s AND mdp=%s;", username, Utilitaire.encryptThisString(password)));
+			ResultSet result = statement.executeQuery(String.format("SELECT Id_patient FROM patient WHERE login=%s AND mdp=%s;", username, Utilitaire.encryptThisString(password)));
 			result.next();
 			ret = result.getString("id_patient");
 			} catch(SQLException e) {
@@ -90,5 +91,39 @@ public class Utilitaire {
 			}
 		return ret;
 	}
-
+	
+	public static ArrayList<Integer> getAllPatientId(){
+		ArrayList<Integer> ret = new ArrayList<Integer>();
+		try {
+			Connection connexion = Utilitaire.loadDatabase();
+			Statement statement = connexion.createStatement();
+			ResultSet result = statement.executeQuery(String.format("SELECT Id_patient FROM patient;"));
+			while(result.next()) {
+				ret.add(Integer.parseInt(result.getString("Id_patient")));
+			}
+			
+			} catch(SQLException e) {
+				System.out.println(e.getMessage());
+			}
+		return ret;
+	}
+	
+	public static ArrayList<Integer> getAllRDVId(){
+		ArrayList<Integer> ret = new ArrayList<Integer>();
+		try {
+			Connection connexion = Utilitaire.loadDatabase();
+			Statement statement = connexion.createStatement();
+			ResultSet result = statement.executeQuery(String.format("SELECT Id_rdv FROM rendez_vous;"));
+			while(result.next()) {
+				ret.add(Integer.parseInt(result.getString("Id_rdv")));
+			}
+			
+			} catch(SQLException e) {
+				System.out.println(e.getMessage());
+			}
+		return ret;
+	}
+	
+	
+	
 }
