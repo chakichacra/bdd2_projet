@@ -3,13 +3,41 @@ package obj_non_graphique;
 public class Date {
 	private Integer jour;
 	private Integer mois;
+	private Integer year;
 	private Integer heure;
 	private Integer minute;
+	private Integer seconde;
 	
 	public Date(String str) {
-		System.out.println(str);
+		String[] strList = str.split(" ");
+		String[] splitHour = strList[1].split(":");
+		String[] splitDate = strList[0].split("-");
+		
+		this.jour = Integer.parseInt(splitDate[2]);
+		this.mois = Integer.parseInt(splitDate[1]);
+		this.year = Integer.parseInt(splitDate[0]);
+		
+		this.heure = Integer.parseInt(splitHour[0]);
+		this.minute = Integer.parseInt(splitHour[1]);
+		this.seconde = Integer.parseInt(splitHour[2]);
 	}
 	
+	public Integer getYear() {
+		return year;
+	}
+
+	public void setYear(Integer year) {
+		this.year = year;
+	}
+
+	public Integer getSeconde() {
+		return seconde;
+	}
+
+	public void setSeconde(Integer seconde) {
+		this.seconde = seconde;
+	}
+
 	public String getString() {
 		String ret;
 		ret = this.jour.toString() + "/" + this.mois.toString() +
