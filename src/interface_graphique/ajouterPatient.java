@@ -29,14 +29,14 @@ import javax.swing.JRadioButtonMenuItem;
 
 public class ajouterPatient {
 
-	private JFrame frame;
-	private JTextField nom;
-	private JTextField prenom;
-	private JTextField adresse;
-	private JTextField tel;
-	private JTextField login;
-	private JPasswordField motDePasse;
-	private JTextField moyenDecouverte;
+	JFrame frame;
+	JTextField nom;
+	JTextField prenom;
+	JTextField adresse;
+	JTextField tel;
+	JTextField login;
+	JPasswordField motDePasse;
+	JTextField moyenDecouverte;
 
 	/**
 	 * Launch the application.
@@ -69,6 +69,7 @@ public class ajouterPatient {
 		frame.setMinimumSize(new Dimension(1000, 1000));
 		frame.setSize(new Dimension(1000, 1000));
 		frame.setBounds(100, 100, 450, 300);
+		frame.setTitle("ajouter un patient");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new BorderLayout(0, 0));
 		
@@ -134,7 +135,7 @@ public class ajouterPatient {
 		panel.add(footer, BorderLayout.SOUTH);
 		
 		JPanel panel_centre = new JPanel();
-		panel_centre.setVisible(false);
+		panel_centre.setVisible(true);
 		panel.add(panel_centre, BorderLayout.CENTER);
 		panel_centre.setLayout(null);
 		
@@ -277,30 +278,44 @@ public class ajouterPatient {
         btnAjouterPatient.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				ajouterPatient window = new ajouterPatient();
+				window.frame.setVisible(true);
+				frame.dispose();
 			}
 		});
 		
 		btnAjouterUnRendezvous.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				ajouterRDV window = new ajouterRDV();
+				window.frame.setVisible(true);
+				frame.dispose();
 			}
 		});
 		
 		btnConsulterMesRendezvous.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				ConsulterRDVPsy window = new ConsulterRDVPsy();
+				window.frame.setVisible(true);
+				frame.dispose();
 			}
 		});
 		
 		btnConsulterLesRendezvous.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				consultationChoixPatient window = new consultationChoixPatient();
+				window.frame.setVisible(true);
+				frame.dispose();
 			}
 		});
 		
 		deconnexion.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				main.fmain();
+				frame.dispose();
 			}
 		});
 		

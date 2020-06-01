@@ -18,7 +18,7 @@ import javax.swing.border.LineBorder;
 
 public class ConsulterRDVPsy {
 
-	private JFrame frame;
+	JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -116,7 +116,7 @@ public class ConsulterRDVPsy {
 		panel.add(footer, BorderLayout.SOUTH);
 		
 		JPanel panel_centre = new JPanel();
-		panel_centre.setVisible(false);
+		panel_centre.setVisible(true);
 		panel.add(panel_centre, BorderLayout.CENTER);
 		panel_centre.setLayout(null);
 		
@@ -132,11 +132,11 @@ public class ConsulterRDVPsy {
 		lblNewLabel_2.setBounds(114, 27, 428, 45);
 		panel_1.add(lblNewLabel_2);
 		
-		JButton btnChoixSemaine = new JButton("consulter mes rendez-vous pour une semaine");
-		btnChoixSemaine.setBounds(83, 140, 255, 23);
+		JButton btnChoixSemaine = new JButton("pour une semaine");
+		btnChoixSemaine.setBounds(118, 140, 220, 23);
 		panel_centre.add(btnChoixSemaine);
 		
-		JButton btnChoixJour = new JButton("consulter mes rendez-vous pour un jour");
+		JButton btnChoixJour = new JButton("pour un jour\r\n");
 		btnChoixJour.setBounds(348, 140, 255, 23);
 		panel_centre.add(btnChoixJour);
 		
@@ -144,43 +144,62 @@ public class ConsulterRDVPsy {
 		btnAjouterPatient.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				ajouterPatient window = new ajouterPatient();
+				window.frame.setVisible(true);
+				frame.dispose();
 			}
 		});
 		
 		btnAjouterUnRendezvous.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				ajouterRDV window = new ajouterRDV();
+				window.frame.setVisible(true);
+				frame.dispose();
 			}
 		});
 		
 		btnConsulterMesRendezvous.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				ConsulterRDVPsy window = new ConsulterRDVPsy();
+				window.frame.setVisible(true);
+				frame.dispose();
 			}
 		});
-		
 		
 		btnConsulterLesRendezvous.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				consultationChoixPatient window = new consultationChoixPatient();
+				window.frame.setVisible(true);
+				frame.dispose();
 			}
 		});
 		
 		deconnexion.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				main.fmain();
+				frame.dispose();
 			}
 		});
 		
 		btnChoixSemaine.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				consultationChoixSemaine window = new consultationChoixSemaine();
+				window.frame.setVisible(true);
+				frame.dispose();
 			}
 		});
 		
 		btnChoixJour.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				consultationChoixJour window = new consultationChoixJour();
+				window.frame.setVisible(true);
+				frame.dispose();
 			}
 		});
 	}

@@ -24,8 +24,8 @@ import java.awt.event.MouseEvent;
 
 public class ajouterRDV {
 
-	private JFrame frame;
-	private JTextField prix;
+	JFrame frame;
+	JTextField prix;
 
 	/**
 	 * Launch the application.
@@ -123,7 +123,7 @@ public class ajouterRDV {
 		panel.add(footer, BorderLayout.SOUTH);
 		
 		JPanel panel_centre = new JPanel();
-		panel_centre.setVisible(false);
+		panel_centre.setVisible(true);
 		panel.add(panel_centre, BorderLayout.CENTER);
 		panel_centre.setLayout(null);
 		
@@ -224,35 +224,49 @@ public class ajouterRDV {
 		btnAjouterPatient.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				ajouterPatient window = new ajouterPatient();
+				window.frame.setVisible(true);
+				frame.dispose();
 			}
 		});
 		
 		btnAjouterUnRendezvous.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				ajouterRDV window = new ajouterRDV();
+				window.frame.setVisible(true);
+				frame.dispose();
 			}
 		});
 		
 		btnConsulterMesRendezvous.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-			}
-		});
-		
-		JButton ajouterRDV = new JButton("ajouter");
-		ajouterRDV.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
+				ConsulterRDVPsy window = new ConsulterRDVPsy();
+				window.frame.setVisible(true);
+				frame.dispose();
 			}
 		});
 		
 		btnConsulterLesRendezvous.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				consultationChoixPatient window = new consultationChoixPatient();
+				window.frame.setVisible(true);
+				frame.dispose();
 			}
 		});
 		
 		deconnexion.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				main.fmain();
+				frame.dispose();
+			}
+		});
+		
+		JButton ajouterRDV = new JButton("ajouter");
+		ajouterRDV.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 			}

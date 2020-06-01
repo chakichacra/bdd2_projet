@@ -24,7 +24,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class consultationRDVFuturs {
 
-	private JFrame frame;
+	JFrame frame;
 	private JTable table_2;
 
 	/**
@@ -88,10 +88,10 @@ public class consultationRDVFuturs {
 		lblNewLabel_1.setBounds(10, 170, 180, 26);
 		menu.add(lblNewLabel_1);
 		
-		JButton btnNewButton_1 = new JButton("deconnexion\r\n");
-		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnNewButton_1.setBounds(10, 328, 180, 23);
-		menu.add(btnNewButton_1);
+		JButton deconnexion = new JButton("deconnexion\r\n");
+		deconnexion.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		deconnexion.setBounds(10, 328, 180, 23);
+		menu.add(deconnexion);
 		
 		JPanel panel_4 = new JPanel();
 		panel_4.setBackground(Color.WHITE);
@@ -122,11 +122,11 @@ public class consultationRDVFuturs {
 		panel.add(footer, BorderLayout.SOUTH);
 		
 		JPanel panel_centre = new JPanel();
-		panel_centre.setVisible(false);
+		panel_centre.setVisible(true);
 		panel.add(panel_centre, BorderLayout.CENTER);
 		
 		JPanel anterieurs = new JPanel();
-		anterieurs.setVisible(false);
+		anterieurs.setVisible(true);
 		anterieurs.setLayout(null);
 		
 		JPanel panel_1 = new JPanel();
@@ -186,18 +186,26 @@ public class consultationRDVFuturs {
 			fut.addMouseListener(new MouseAdapter() {
 				@Override
 				public void mouseClicked(MouseEvent e) {
+					consultationRDVFuturs window = new consultationRDVFuturs();
+					window.frame.setVisible(true);
+					frame.dispose();
 				}
 			});
 
 			ant.addMouseListener(new MouseAdapter() {
 				@Override
 				public void mouseClicked(MouseEvent e) {
+					ConsultationRDVAnterieurs window = new ConsultationRDVAnterieurs();
+					window.frame.setVisible(true);
+					frame.dispose();
 				}
 			});
 			
-			btnNewButton_1.addMouseListener(new MouseAdapter() {
+			deconnexion.addMouseListener(new MouseAdapter() {
 				@Override
 				public void mouseClicked(MouseEvent e) {
+					main.fmain();
+					frame.dispose();
 				}
 			});
 	}

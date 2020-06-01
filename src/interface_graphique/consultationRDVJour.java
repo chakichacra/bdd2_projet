@@ -23,7 +23,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class consultationRDVJour {
 
-	private JFrame frame;
+	JFrame frame;
 	private JTable table;
 
 	/**
@@ -123,7 +123,7 @@ public class consultationRDVJour {
 		
 		JPanel panel_centre = new JPanel();
 		panel_centre.setFont(new Font("Verdana", Font.BOLD, 12));
-		panel_centre.setVisible(false);
+		panel_centre.setVisible(true);
 		panel.add(panel_centre, BorderLayout.CENTER);
 		
 		JPanel panel_1 = new JPanel();
@@ -136,9 +136,9 @@ public class consultationRDVJour {
 		lblNewLabel_2.setBounds(114, 27, 428, 45);
 		panel_1.add(lblNewLabel_2);
 		
-		JButton btnChoixSemaine = new JButton("consulter mes rendez-vous pour une semaine");
+		JButton btnChoixSemaine = new JButton("pour une semaine");
 		
-		JButton btnChoixJour = new JButton("consulter mes rendez-vous pour un jour");
+		JButton btnChoixJour = new JButton("pour un jour");
 		
 		JScrollPane scrollPane = new JScrollPane();
 		
@@ -189,42 +189,62 @@ public class consultationRDVJour {
 		btnAjouterPatient.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				ajouterPatient window = new ajouterPatient();
+				window.frame.setVisible(true);
+				frame.dispose();
 			}
 		});
 		
 		btnAjouterUnRendezvous.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				ajouterRDV window = new ajouterRDV();
+				window.frame.setVisible(true);
+				frame.dispose();
 			}
 		});
 		
 		btnConsulterMesRendezvous.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				ConsulterRDVPsy window = new ConsulterRDVPsy();
+				window.frame.setVisible(true);
+				frame.dispose();
 			}
 		});
 		
 		btnConsulterLesRendezvous.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				consultationChoixPatient window = new consultationChoixPatient();
+				window.frame.setVisible(true);
+				frame.dispose();
 			}
 		});
 		
 		deconnexion.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				main.fmain();
+				frame.dispose();
 			}
 		});
 		
 		btnChoixSemaine.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				consultationChoixSemaine window = new consultationChoixSemaine();
+				window.frame.setVisible(true);
+				frame.dispose();
 			}
 		});
 		
 		btnChoixJour.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				consultationChoixJour window = new consultationChoixJour();
+				window.frame.setVisible(true);
+				frame.dispose();
 			}
 		});
 	}

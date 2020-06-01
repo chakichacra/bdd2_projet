@@ -24,7 +24,6 @@ public class modifierRDV {
 
 	private JFrame frame;
 	private JTextField prix;
-	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -122,7 +121,7 @@ public class modifierRDV {
 		panel.add(footer, BorderLayout.SOUTH);
 		
 		JPanel panel_centre = new JPanel();
-		panel_centre.setVisible(false);
+		panel_centre.setVisible(true);
 		panel.add(panel_centre, BorderLayout.CENTER);
 		panel_centre.setLayout(null);
 		
@@ -221,51 +220,59 @@ public class modifierRDV {
 		panel_centre.add(classification3);
 		
 		JButton modifierRDV = new JButton("valider");
-		modifierRDV.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-			}
-		});
 		modifierRDV.setBounds(62, 433, 89, 23);
 		panel_centre.add(modifierRDV);
 		
-		textField = new JTextField();
-		textField.setBounds(232, 376, 200, 20);
-		panel_centre.add(textField);
-		textField.setColumns(10);
-		
-		JLabel lblRemarque = new JLabel("remarque");
-		lblRemarque.setHorizontalAlignment(SwingConstants.CENTER);
-		lblRemarque.setFont(new Font("Verdana", Font.BOLD, 12));
-		lblRemarque.setBounds(22, 374, 200, 23);
-		panel_centre.add(lblRemarque);
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.setBounds(529, 171, 89, 23);
+		panel_centre.add(btnNewButton);
 		
 		
 		btnAjouterPatient.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				ajouterPatient window = new ajouterPatient();
+				window.frame.setVisible(true);
+				frame.dispose();
 			}
 		});
 		
 		btnAjouterUnRendezvous.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				ajouterRDV window = new ajouterRDV();
+				window.frame.setVisible(true);
+				frame.dispose();
 			}
 		});
 		
 		btnConsulterMesRendezvous.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				ConsulterRDVPsy window = new ConsulterRDVPsy();
+				window.frame.setVisible(true);
+				frame.dispose();
 			}
 		});
 		
 		btnConsulterLesRendezvous.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				consultationChoixPatient window = new consultationChoixPatient();
+				window.frame.setVisible(true);
+				frame.dispose();
 			}
 		});
 		
 		deconnexion.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				main.fmain();
+				frame.dispose();
+			}
+		});
+		
+		modifierRDV.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 			}
