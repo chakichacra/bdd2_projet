@@ -1,22 +1,21 @@
 package interface_graphique;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-
-import java.awt.Dimension;
-import java.awt.BorderLayout;
-import java.awt.CardLayout;
-import java.awt.Color;
-
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
-import javax.swing.JButton;
+import javax.swing.DefaultComboBoxModel;
 
-public class interface_psy {
+public class consultationChoixPatient {
 
 	private JFrame frame;
 
@@ -27,7 +26,7 @@ public class interface_psy {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					interface_psy window = new interface_psy();
+					consultationChoixPatient window = new consultationChoixPatient();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -39,7 +38,7 @@ public class interface_psy {
 	/**
 	 * Create the application.
 	 */
-	public interface_psy() {
+	public consultationChoixPatient() {
 		initialize();
 	}
 
@@ -118,6 +117,30 @@ public class interface_psy {
 		JPanel panel_centre = new JPanel();
 		panel_centre.setVisible(false);
 		panel.add(panel_centre, BorderLayout.CENTER);
-		panel_centre.setLayout(new CardLayout(0, 0));
+		panel_centre.setLayout(null);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(Color.WHITE);
+		panel_1.setBounds(0, 0, 734, 83);
+		panel_centre.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JLabel lblNewLabel_2 = new JLabel("Consulter les rendez-vous d'un patient");
+		lblNewLabel_2.setFont(new Font("Verdana", Font.BOLD, 16));
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2.setBounds(114, 27, 428, 45);
+		panel_1.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("Choisir un patient");
+		lblNewLabel_3.setFont(new Font("Verdana", Font.BOLD, 12));
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3.setBounds(22, 170, 200, 23);
+		panel_centre.add(lblNewLabel_3);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"patient1", "patient2", "patient3"}));
+		comboBox.setBounds(232, 171, 200, 22);
+		panel_centre.add(comboBox);
 	}
+
 }

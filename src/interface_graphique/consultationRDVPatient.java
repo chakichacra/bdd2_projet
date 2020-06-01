@@ -1,24 +1,28 @@
 package interface_graphique;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
 
+import javax.swing.GroupLayout;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-
-import java.awt.Dimension;
-import java.awt.BorderLayout;
-import java.awt.CardLayout;
-import java.awt.Color;
-
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.SwingConstants;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.LineBorder;
-import javax.swing.JButton;
+import javax.swing.table.DefaultTableModel;
 
-public class interface_psy {
+public class consultationRDVPatient {
 
 	private JFrame frame;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -27,7 +31,7 @@ public class interface_psy {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					interface_psy window = new interface_psy();
+					consultationRDVPatient window = new consultationRDVPatient();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -39,7 +43,7 @@ public class interface_psy {
 	/**
 	 * Create the application.
 	 */
-	public interface_psy() {
+	public consultationRDVPatient() {
 		initialize();
 	}
 
@@ -116,8 +120,55 @@ public class interface_psy {
 		panel.add(footer, BorderLayout.SOUTH);
 		
 		JPanel panel_centre = new JPanel();
+		panel_centre.setFont(new Font("Verdana", Font.BOLD, 12));
 		panel_centre.setVisible(false);
 		panel.add(panel_centre, BorderLayout.CENTER);
-		panel_centre.setLayout(new CardLayout(0, 0));
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(Color.WHITE);
+		panel_1.setLayout(null);
+		
+		JLabel lblNewLabel_2 = new JLabel("Consulter les rendez-vous d'un patient");
+		lblNewLabel_2.setFont(new Font("Verdana", Font.BOLD, 16));
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2.setBounds(114, 27, 428, 45);
+		panel_1.add(lblNewLabel_2);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		
+		JLabel lblNewLabel_3 = new JLabel("Consultation du planing du patient :");
+		lblNewLabel_3.setFont(new Font("Verdana", Font.PLAIN, 12));
+		GroupLayout gl_panel_centre = new GroupLayout(panel_centre);
+		gl_panel_centre.setHorizontalGroup(
+			gl_panel_centre.createParallelGroup(Alignment.LEADING)
+				.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 734, GroupLayout.PREFERRED_SIZE)
+				.addGroup(gl_panel_centre.createSequentialGroup()
+					.addGap(83)
+					.addGroup(gl_panel_centre.createParallelGroup(Alignment.LEADING)
+						.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 525, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblNewLabel_3, GroupLayout.PREFERRED_SIZE, 288, GroupLayout.PREFERRED_SIZE)))
+		);
+		gl_panel_centre.setVerticalGroup(
+			gl_panel_centre.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_centre.createSequentialGroup()
+					.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
+					.addComponent(lblNewLabel_3)
+					.addGap(18)
+					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 411, GroupLayout.PREFERRED_SIZE)
+					.addGap(81))
+		);
+		
+		table = new JTable();
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+			},
+			new String[] {
+				"ID", "Patient(s)", "Jour", "Heure", "Prix", "Paiement", "", ""
+			}
+		));
+		scrollPane.setViewportView(table);
+		panel_centre.setLayout(gl_panel_centre);
 	}
+
 }
